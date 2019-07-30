@@ -1,7 +1,8 @@
 <?php
 
-require_once 'CarProduct.php';
-require_once 'LamborghiniVeneno.php';
+spl_autoload_register(function($className) {
+    include_once explode('\\', $className)[1] . '.php';
+});
 
 $lambo = new \InterfaceTutorial\LamborghiniVeneno();
 $lambo->accelerate();
